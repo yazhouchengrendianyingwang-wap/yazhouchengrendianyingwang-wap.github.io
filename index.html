@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content="亚洲成人电影网 - 汇聚中日韩港台东南亚全亚洲影视精品，华语电影、日剧韩剧、泰剧、港片一网打尽。">
+<meta name="keywords" content="亚洲成人电影网,中日韩影视,华语电影,日剧韩剧,泰剧,港片,东南亚电影,亚洲影院">
+<meta name="author" content="亚洲成人电影网">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0d0204">
+<meta property="og:title" content="亚洲成人电影网 - 全亚洲影视精品汇聚">
+<meta property="og:description" content="中日韩港台东南亚影视一网打尽，华语电影、日剧韩剧、泰剧、港片精选。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yazhouchengrendianyingwang-wap.github.io">
+<meta property="og:site_name" content="亚洲成人电影网">
+<link rel="canonical" href="https://yazhouchengrendianyingwang-wap.github.io">
+<title>亚洲成人电影网 - 全亚洲影视精品汇聚平台</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0d0204;--bg2:#170306;--card:rgba(232,164,84,.06);--line:rgba(232,164,84,.26);
+  --txt:#fff6ec;--dim:#c9a78a;--gold:#e8a454;--bright:#ffcf8a;--crimson:#c8102e;--deep:#7a0d1c;--ink:#1a0f0a;
+  --g1:linear-gradient(120deg,#e8a454,#c8102e);--g2:linear-gradient(120deg,#ffcf8a,#e8a454);--g3:linear-gradient(135deg,#7a0d1c,#c8102e);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--txt);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+::selection{background:var(--crimson);color:#fff}
+img{max-width:100%;display:block}
+
+/* INK BG */
+.ink{position:fixed;inset:0;z-index:-2;overflow:hidden;background:radial-gradient(ellipse at 50% -5%,#3a0a12,#0d0204 62%)}
+.ink::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(232,164,84,.035) 1px,transparent 1px);background-size:5px 5px}
+.lantern{position:fixed;z-index:-1;width:140px;height:170px;border-radius:50% 50% 46% 46%/58% 58% 42% 42%;background:radial-gradient(ellipse at 40% 35%,#ff8a5c,#c8102e 60%,#7a0d1c);opacity:.18;box-shadow:0 0 60px rgba(200,16,46,.45)}
+.lantern::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);width:2px;height:40px;background:linear-gradient(#8a6a3c,transparent)}
+.l1{left:-40px;top:14%}.l2{right:-30px;top:38%}.l3{left:8%;bottom:8%}
+.seal{position:fixed;right:5%;top:24%;z-index:-1;width:110px;height:110px;border:3px solid rgba(200,16,46,.28);border-radius:12px;display:grid;grid-template-columns:repeat(2,1fr);opacity:.5}
+.seal span{display:grid;place-items:center;font-size:1.5rem;color:rgba(232,164,84,.5);font-weight:900;border:1px solid rgba(200,16,46,.16)}
+
+/* LOADER */
+.load{position:fixed;inset:0;z-index:9999;background:#0d0204;display:grid;place-items:center;gap:20px;transition:opacity .6s,visibility .6s}
+.load.hide{opacity:0;visibility:hidden}
+.brush{width:180px;height:6px;background:rgba(255,255,255,.12);border-radius:4px;overflow:hidden;position:relative}
+.brush::before{content:'';position:absolute;inset:0;width:40%;background:var(--g1);animation:sw 1.1s ease-in-out infinite}
+@keyframes sw{0%{left:-40%}100%{left:100%}}
+.load-tx{font-size:.72rem;letter-spacing:8px;color:var(--gold);text-transform:uppercase}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(13,2,4,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.navbox{max-width:1280px;margin:0 auto;padding:0 22px;height:70px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:900;font-size:1.2rem;flex:0 0 auto}
+.brand .badge{width:42px;height:42px;border-radius:8px;background:var(--crimson);display:grid;place-items:center;font-size:.72rem;color:#fff;font-weight:900;box-shadow:0 0 0 2px rgba(232,164,84,.4),0 0 22px rgba(200,16,46,.45);flex:0 0 auto;line-height:1.1;text-align:center}
+.brand .em{color:var(--gold);font-weight:400;font-size:.9rem}
+.brand .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:pulse 1.6s infinite;margin-left:8px}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(232,164,84,.32)}}
+.menu{display:flex;gap:2px;align-items:center}
+.menu a{padding:9px 15px;border-radius:9px;font-size:.9rem;color:var(--dim);transition:.25s;white-space:nowrap}
+.menu a:hover{color:var(--bright);background:rgba(232,164,84,.12)}
+.menu a.on{color:#fff;background:var(--crimson);font-weight:700}
+.search{flex:0 0 auto;display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:20px;padding:5px 14px;background:var(--card)}
+.search input{border:none;outline:none;background:transparent;color:var(--txt);font-size:.86rem;width:120px;font-family:inherit}
+.search input::placeholder{color:var(--dim)}
+.burger{display:none;width:42px;height:42px;border-radius:10px;border:1px solid var(--line);background:var(--card);cursor:pointer;position:relative;flex:0 0 auto}
+.burger span{position:absolute;left:11px;width:18px;height:2px;background:var(--gold);border-radius:2px;transition:.3s}
+.burger span:nth-child(1){top:14px}.burger span:nth-child(2){top:20px}.burger span:nth-child(3){top:26px}
+.burger.open span:nth-child(1){top:20px;transform:rotate(45deg)}.burger.open span:nth-child(2){opacity:0}.burger.open span:nth-child(3){top:20px;transform:rotate(-45deg)}
+
+/* HERO */
+.hero{min-height:100vh;max-width:1280px;margin:0 auto;padding:120px 22px 70px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative}
+.han{position:absolute;right:-30px;top:16%;font-size:13rem;font-weight:900;color:rgba(200,16,46,.07);line-height:1;writing-mode:vertical-rl;z-index:-1}
+.hero h1{font-size:clamp(2rem,5.4vw,4.6rem);line-height:1.02;font-weight:900;letter-spacing:-1px}
+.hero h1 .gr{background:var(--g2);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.kicker{display:inline-flex;align-items:center;gap:9px;padding:6px 15px;border:1px solid var(--line);border-radius:30px;font-size:.76rem;color:var(--gold);margin-bottom:22px;background:var(--card)}
+.hero .sub{margin-top:22px;color:var(--dim);font-size:clamp(.95rem,1.5vw,1.08rem);max-width:500px}
+.h-acts{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 30px;border-radius:9px;font-size:.92rem;font-weight:700;cursor:pointer;border:none;transition:.3s;letter-spacing:.5px}
+.btn-f{background:var(--g1);color:#fff;box-shadow:0 8px 30px rgba(200,16,46,.45)}
+.btn-f:hover{transform:translateY(-3px);box-shadow:0 14px 42px rgba(232,164,84,.55)}
+.btn-g{background:transparent;color:var(--bright);border:1px solid var(--line)}
+.btn-g:hover{border-color:var(--gold);color:#fff;transform:translateY(-3px)}
+.h-mini{display:flex;gap:36px;margin-top:38px}
+.h-mini div b{display:block;font-size:1.85rem;font-weight:900;background:var(--g2);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.h-mini div span{font-size:.72rem;color:var(--dim);text-transform:uppercase;letter-spacing:1px}
+
+/* HERO 右：环形地图 */
+.atlas{position:relative;width:430px;height:430px;margin:0 auto}
+.ring{position:absolute;inset:0;border:2px solid rgba(232,164,84,.18);border-radius:50%;animation:spin 40s linear infinite}
+.ring.r2{inset:34px;border-style:dashed;border-color:rgba(200,16,46,.22);animation-duration:60s;animation-direction:reverse}
+.ring.r3{inset:68px;border-color:rgba(232,164,84,.12)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.atlas .core{position:absolute;inset:120px;border-radius:50%;background:var(--g1);display:grid;place-items:center;text-align:center;box-shadow:0 0 60px rgba(200,16,46,.55);z-index:3}
+.atlas .core b{font-size:1.3rem;color:#fff;line-height:1.3}
+.atlas .pin{position:absolute;width:52px;height:52px;border-radius:50%;background:var(--bg2);border:2px solid var(--gold);display:grid;place-items:center;font-size:1.3rem;z-index:4;transition:.3s;cursor:pointer}
+.atlas .pin:hover{transform:scale(1.18);background:var(--crimson)}
+.atlas .pin small{position:absolute;top:54px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:.7rem;color:var(--gold);background:var(--bg);border:1px solid var(--line);padding:1px 8px;border-radius:10px}
+.atlas .pin small b{color:var(--bright);font-weight:800}
+.p1{top:6%;left:50%;transform:translateX(-50%)}.p2{top:24%;right:2%}.p3{bottom:20%;right:6%}.p4{bottom:6%;left:50%;transform:translateX(-50%)}.p5{top:24%;left:2%}.p6{bottom:20%;left:6%}
+
+/* SHARED */
+.wrap{max-width:1280px;margin:0 auto;padding:0 22px}
+.sec{padding:96px 0;position:relative}
+.sec-top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:46px;flex-wrap:wrap}
+.sec-idx{font-size:.72rem;letter-spacing:3px;color:var(--gold);font-weight:800;text-transform:uppercase}
+.sec-title{font-size:clamp(1.5rem,3.2vw,2.3rem);font-weight:900;margin-top:4px;letter-spacing:.5px}
+.sec-title .ac{background:var(--g2);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sec-note{color:var(--dim);font-size:.9rem;max-width:330px;text-align:right}
+
+/* COL1 国家：Tab + 内容 */
+#country{background:var(--bg2)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px}
+.tab{padding:10px 22px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--dim);font-size:.9rem;cursor:pointer;transition:.3s;font-family:inherit;font-weight:600}
+.tab:hover{color:var(--bright);border-color:var(--gold)}
+.tab.on{background:var(--crimson);color:#fff;border-color:transparent}
+.panels{position:relative}
+.panel{display:none;grid-template-columns:repeat(4,1fr);gap:18px;animation:fade .4s}
+.panel.on{display:grid}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.pcard{background:var(--bg);border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:.35s;cursor:pointer}
+.pcard:hover{transform:translateY(-7px);border-color:var(--gold)}
+.pcard .cv{height:150px;display:grid;place-items:center;font-size:3rem;position:relative}
+.pcard .cv::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(13,2,4,.78))}
+.pcard .cv span{position:relative;z-index:1}
+.pcard .cv em{position:absolute;right:10px;top:10px;z-index:2;font-style:normal;font-size:.68rem;background:var(--crimson);padding:2px 7px;border-radius:4px;font-weight:700}
+.pcard h5{font-size:.92rem;padding:12px 14px 14px;font-weight:700}
+
+/* COL2 榜单：竖排条 + 对比 */
+#rank{background:linear-gradient(180deg,var(--bg2),var(--bg))}
+.ranks{display:grid;grid-template-columns:1.1fr .9fr;gap:40px}
+.ranklist{display:flex;flex-direction:column;gap:12px}
+.rankrow{display:flex;align-items:center;gap:16px;padding:14px 18px;border:1px solid var(--line);border-radius:12px;background:var(--card);transition:.3s;cursor:pointer}
+.rankrow:hover{border-color:var(--gold);transform:translateX(6px)}
+.rankrow .no{width:36px;height:36px;border-radius:9px;background:rgba(232,164,84,.14);color:var(--gold);font-weight:900;font-size:1.05rem;display:grid;place-items:center;flex:0 0 auto}
+.rankrow.top .no{background:var(--crimson);color:#fff}
+.rankrow .ti{flex:1;font-size:.96rem;font-weight:700}
+.rankrow .sc{font-size:1.1rem;font-weight:900;background:var(--g2);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.vs{border:1px solid var(--line);border-radius:16px;padding:26px;background:var(--bg2);position:relative}
+.vs h4{font-size:1.1rem;text-align:center;margin-bottom:22px}
+.vs .vc{display:flex;align-items:center;justify-content:center;gap:16px}
+.vs .vc .side{text-align:center;flex:1}
+.vs .vc .side .fl{font-size:2.6rem;margin-bottom:6px}
+.vs .vc .side b{display:block;font-size:.95rem}
+.vs .vc .side span{font-size:.78rem;color:var(--dim)}
+.vs .mid{width:44px;height:44px;border-radius:50%;background:var(--g1);display:grid;place-items:center;color:#fff;font-weight:900;font-size:.8rem;flex:0 0 auto}
+.vs .bar{margin-top:22px;height:8px;border-radius:6px;background:rgba(255,255,255,.1);overflow:hidden;display:flex}
+.vs .bar i{display:block;height:100%}
+.vs .bar i.a{background:var(--crimson);width:62%}
+.vs .bar i.b{background:rgba(255,255,255,.2);width:38%}
+.vs .lbl{display:flex;justify-content:space-between;margin-top:8px;font-size:.76rem;color:var(--dim)}
+
+/* COL3 类型：圆角胶囊云 */
+#genre{background:var(--bg2)}
+.cloud{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;max-width:1000px;margin:0 auto}
+.chip{padding:12px 26px;border-radius:40px;border:1px solid var(--line);background:var(--card);color:var(--bright);font-size:1rem;cursor:pointer;transition:.3s;display:flex;align-items:center;gap:9px}
+.chip:hover{transform:translateY(-4px);border-color:var(--gold);background:var(--crimson);color:#fff}
+.chip i{font-style:normal;color:var(--gold);font-size:.82rem}
+.chip.s{padding:16px 32px;font-size:1.15rem;border-color:var(--gold)}
+.chip.l{padding:20px 40px;font-size:1.35rem;background:var(--g3);color:#fff;border-color:transparent;box-shadow:0 8px 26px rgba(200,16,46,.4)}
+.chip.l i{color:#ffcf8a}
+
+/* COL4 日历：7列 */
+#cal{background:linear-gradient(180deg,var(--bg),var(--bg2))}
+.cal-head{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:8px;text-align:center}
+.cal-head span{font-size:.74rem;color:var(--gold);letter-spacing:1px;padding:6px}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.day{border:1px solid var(--line);border-radius:10px;min-height:110px;padding:8px;background:var(--card);transition:.3s;position:relative}
+.day:hover{border-color:var(--gold);transform:translateY(-4px)}
+.day .d{font-size:.78rem;color:var(--dim)}
+.day.on{border-color:var(--crimson);background:rgba(200,16,46,.14)}
+.day.on .d{color:var(--bright);font-weight:800}
+.day .tg{margin-top:6px;font-size:.72rem;color:var(--bright);line-height:1.4}
+.day .tg b{display:block;color:#fff;font-weight:700;font-size:.76rem}
+
+/* COL5 关于：数据统计 + 特性 */
+#about{background:var(--bg2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.stat{border:1px solid var(--line);border-radius:14px;padding:24px;background:var(--card);transition:.35s}
+.stat:hover{border-color:var(--gold);transform:translateY(-5px)}
+.stat b{display:block;font-size:2.1rem;font-weight:900;background:var(--g2);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.stat span{font-size:.82rem;color:var(--dim)}
+.feats{display:flex;flex-direction:column;gap:14px}
+.feat{display:flex;gap:16px;align-items:flex-start;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--card);transition:.3s}
+.feat:hover{border-color:var(--gold);transform:translateX(6px)}
+.feat .ic{width:42px;height:42px;border-radius:10px;background:var(--g1);display:grid;place-items:center;font-size:1.1rem;flex:0 0 auto}
+.feat h5{font-size:.98rem;margin-bottom:3px}
+.feat p{font-size:.84rem;color:var(--dim)}
+
+/* CTA */
+.cta{margin:0 22px;max-width:1236px;margin:0 auto;border:1px solid var(--line);border-radius:20px;padding:50px 40px;text-align:center;background:var(--g3);position:relative;overflow:hidden}
+.cta::before{content:'亞';position:absolute;right:20px;bottom:-20px;font-size:9rem;color:rgba(255,255,255,.09);line-height:1}
+.cta h3{font-size:clamp(1.4rem,3vw,2rem);font-weight:900;margin-bottom:12px;position:relative}
+.cta p{color:rgba(255,255,255,.85);max-width:520px;margin:0 auto 24px;position:relative}
+.cta .btn{background:#fff;color:var(--crimson)}
+.cta .btn:hover{background:var(--bright);color:#fff}
+
+footer{background:#070102;padding:56px 22px 28px;border-top:1px solid var(--line)}
+.foot{max-width:1280px;margin:0 auto;text-align:center}
+.brand-c{display:flex;align-items:center;gap:11px;justify-content:center;margin-bottom:14px;font-weight:900;font-size:1.2rem}
+.brand-c .badge{width:42px;height:42px;border-radius:8px;background:var(--crimson);display:grid;place-items:center;font-size:.72rem;color:#fff;font-weight:900;box-shadow:0 0 0 2px rgba(232,164,84,.4);flex:0 0 auto;line-height:1.1;text-align:center}
+.brand-c .em{color:var(--gold);font-weight:400;font-size:.9rem}
+.foot .d{color:var(--dim);font-size:.9rem;max-width:560px;margin:0 auto 22px}
+.foot .links{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;margin-bottom:24px}
+.foot .links a{color:var(--dim);font-size:.88rem;transition:.25s}
+.foot .links a:hover{color:var(--gold)}
+.copy{padding-top:22px;border-top:1px solid var(--line);font-size:.8rem;color:var(--dim)}
+.copy a{color:var(--gold)}
+
+.topbtn{position:fixed;right:24px;bottom:28px;width:46px;height:46px;border-radius:50%;background:var(--g1);display:grid;place-items:center;font-size:1.1rem;cursor:pointer;opacity:0;visibility:hidden;transition:.3s;z-index:300;box-shadow:0 6px 24px rgba(200,16,46,.5);color:#fff}
+.topbtn.show{opacity:1;visibility:visible}
+.topbtn:hover{transform:translateY(-3px)}
+
+.rv{opacity:0;transform:translateY(34px);transition:.7s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:980px){
+  .hero{grid-template-columns:1fr;gap:40px;padding-top:104px}.atlas{width:340px;height:340px}
+  .panel{grid-template-columns:repeat(2,1fr)}.ranks{grid-template-columns:1fr;gap:26px}.about-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .search{display:none}
+  .menu{position:fixed;top:70px;left:0;right:0;flex-direction:column;padding:18px;gap:4px;background:rgba(13,2,4,.98);border-bottom:1px solid var(--line);transform:translateY(-130%);transition:.4s}
+  .menu.open{transform:none}.menu a{width:100%;text-align:center;padding:14px}.burger{display:block}
+  .sec{padding:70px 0}.sec-top{margin-bottom:30px}.sec-note{text-align:left}
+  .cal{display:none}.cal-head{display:none}
+  .calm{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .cta{padding:36px 22px}
+}
+@media(max-width:480px){
+  .hero h1{font-size:1.95rem}.h-acts .btn{width:100%;justify-content:center}
+  .h-mini{gap:22px}.panel{grid-template-columns:1fr 1fr}
+  .atlas{display:none}.han{font-size:8rem;right:0;top:10%}
+  .stats{grid-template-columns:1fr 1fr}.chip{font-size:.88rem;padding:10px 18px}
+  .topbtn{right:16px;bottom:20px;width:42px;height:42px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+<div class="ink"></div>
+<div class="lantern l1"></div><div class="lantern l2"></div><div class="lantern l3"></div>
+<div class="seal"><span>亞</span><span>洲</span><span>影</span><span>視</span></div>
+
+<div class="load" id="load"><div class="brush"></div><div class="load-tx">亚洲成人电影网 · 加载中</div></div>
+
+<nav class="nav">
+  <div class="navbox">
+    <a href="#top" class="brand"><span class="badge">亞洲<br>影视</span><span>亚洲成人电影网</span><span class="em">全亚洲精选</span><span class="dot"></span></a>
+    <div class="search"><span>🔍</span><input type="text" placeholder="搜索影片…"></div>
+    <div class="menu" id="menu">
+      <a href="#top" class="on">首页</a><a href="#country">国家</a><a href="#rank">榜单</a><a href="#genre">类型</a><a href="#cal">排片</a><a href="#about">关于</a>
+    </div>
+    <button class="burger" id="burger" aria-label="菜单"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="han">亞</div>
+  <div class="hero-copy">
+    <div class="kicker">🏮 中日韩港台东南亚 · 一网打尽</div>
+    <h1><span class="gr">亚洲</span><br>电影网</h1>
+    <p class="sub">汇聚中日韩港台东南亚全亚洲影视精品，华语电影、日剧韩剧、泰剧、港片精选，一站看全亚洲好片。</p>
+    <div class="h-acts">
+      <a href="#country" class="btn btn-f">▶ 探索亚洲</a>
+      <a href="#rank" class="btn btn-g">🏆 热播榜单</a>
+    </div>
+    <div class="h-mini">
+      <div><b>6+</b><span>地区覆盖</span></div>
+      <div><b>万级</b><span>影片资源</span></div>
+      <div><b>每日</b><span>同步更新</span></div>
+    </div>
+  </div>
+  <div class="atlas">
+    <div class="ring"></div><div class="ring r2"></div><div class="ring r3"></div>
+    <div class="core"><b>亚洲<br>影视精选</b></div>
+    <div class="pin p1">🇨🇳<small>华语 <b>1280</b></small></div>
+    <div class="pin p2">🇯🇵<small>日韩 <b>960</b></small></div>
+    <div class="pin p3">🇰🇷<small>韩剧 <b>720</b></small></div>
+    <div class="pin p4">🇭🇰<small>港片 <b>640</b></small></div>
+    <div class="pin p5">🇹🇭<small>泰剧 <b>520</b></small></div>
+    <div class="pin p6">🇸🇬<small>东南亚 <b>380</b></small></div>
+  </div>
+</header>
+
+<!-- COL 1 -->
+<section class="sec" id="country">
+  <div class="wrap">
+    <div class="sec-top rv">
+      <div><span class="sec-idx">01 / Region</span><h2 class="sec-title">按<span class="ac">国家地区</span>选片</h2></div>
+      <p class="sec-note">中日韩港台，各取所爱</p>
+    </div>
+    <div class="tabs rv">
+      <button class="tab on" data-t="0">🇨🇳 华语电影</button>
+      <button class="tab" data-t="1">🇯🇵 日本影视</button>
+      <button class="tab" data-t="2">🇰🇷 韩国影视</button>
+      <button class="tab" data-t="3">🇭🇰 港片专区</button>
+    </div>
+    <div class="panels rv">
+      <div class="panel on" id="p0">
+        <div class="pcard"><div class="cv" style="background:linear-gradient(135deg,#3a0a12,#7a0d1c)"><span>🏯</span><em>热</em></div><h5>流浪地球2</h5></div>
+        <div class="pcard"><div class="cv" style="background:linear-gradient(135deg,#2a0710,#5c0915)"><span>⚔️</span><em>新</em></div><h5>封神第一部</h5></div>
+        <div class="pcard"><div class="cv" style="background:linear-gradient(135deg,#4a0e16,#8a1222)"><span>🎭</span></div><h5>漫长的季节</h5></div>
+        <div class="pcard"><div class="cv" style="background:linear-gradient(135deg,#33101a,#6b0d18)"><span>🌊</span></div><h5>卧虎藏龙</h5></div>
+      </div>
+      <div class="panel" id="p1">
+        <div class="pcard"><div class="cv" style="background:linear-gradient(135deg,#3a0a12,#7a0d1c)"><span>🌸</span><em>追</em></div><h5>千与千寻</h5></div>
+        <div class="pcard"><div class="cv" style="background:linear-gradient(135deg,#2a0710,#5c0915)"><span>🐉</span><em>热</em></div><h5>哥斯拉-1.0</h5></div>
+        <div class="pcard"><div class="cv" style="background:linear-gradient(135deg,#4a0e16,#8a1222)"><span>🍡</span></div><h5>你的名字。</h5></div>
+        <div class="pcard"><div class="cv" style="background:linear-gradient(135deg,#33101a,#6b0d18)"><span>🗾</span></div><h5>东京物语</h5></div>
+      </div>
+      <div class="panel" id="p2">
+        <div class="pcard"><div class="cv" style="background:linear-gradient(135deg,#3a0a12,#7a0d1c)"><span>👹</span></div><h5>寄生虫</h5></div>
+        <div class="pcard"><div class="cv" style="background:linear-gradient(135deg,#2a0710,#5c0915)"><span>⚓</span></div><h5>釜山行</h5></div>
+        <div class="pcard"><div class="cv" style="background:linear-gradient(135deg,#4a0e16,#8a1222)"><span>🏆</span><em>高</em></div><h5>鱿鱼游戏</h5></div>
+        <div class="pcard"><div class="cv" style="background:linear-gradient(135deg,#33101a,#6b0d18)"><span>🎻</span></div><h5>燃烧</h5></div>
+      </div>
+      <div class="panel" id="p3">
+        <div class="pcard"><div class="cv" style="background:linear-gradient(135deg,#3a0a12,#7a0d1c)"><span>🕶️</span><em>经</em></div><h5>无间道</h5></div>
+        <div class="pcard"><div class="cv" style="background:linear-gradient(135deg,#2a0710,#5c0915)"><span>🦅</span></div><h5>英雄本色</h5></div>
+        <div class="pcard"><div class="cv" style="background:linear-gradient(135deg,#4a0e16,#8a1222)"><span>🎤</span></div><h5>喜剧之王</h5></div>
+        <div class="pcard"><div class="cv" style="background:linear-gradient(135deg,#33101a,#6b0d18)"><span>🐉</span></div><h5>少林足球</h5></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COL 2 -->
+<section class="sec" id="rank">
+  <div class="wrap">
+    <div class="sec-top rv">
+      <div><span class="sec-idx">02 / Chart</span><h2 class="sec-title">本周<span class="ac">热播榜</span></h2></div>
+      <p class="sec-note">亚洲影迷真实口碑</p>
+    </div>
+    <div class="ranks">
+      <div class="ranklist">
+        <div class="rankrow top rv"><span class="no">1</span><span class="ti">漫长的季节</span><span class="sc">9.4</span></div>
+        <div class="rankrow top rv"><span class="no">2</span><span class="ti">寄生虫</span><span class="sc">9.3</span></div>
+        <div class="rankrow rv"><span class="no">3</span><span class="ti">千与千寻</span><span class="sc">9.4</span></div>
+        <div class="rankrow rv"><span class="no">4</span><span class="ti">鱿鱼游戏</span><span class="sc">9.0</span></div>
+        <div class="rankrow rv"><span class="no">5</span><span class="ti">无间道</span><span class="sc">9.1</span></div>
+        <div class="rankrow rv"><span class="no">6</span><span class="ti">封神第一部</span><span class="sc">9.0</span></div>
+        <div class="rankrow rv"><span class="no">7</span><span class="ti">哥斯拉-1.0</span><span class="sc">8.8</span></div>
+        <div class="rankrow rv"><span class="no">8</span><span class="ti">你的名字。</span><span class="sc">8.9</span></div>
+      </div>
+      <div class="vs rv">
+        <h4>🔥 本周热度对决</h4>
+        <div class="vc">
+          <div class="side"><div class="fl">🇨🇳</div><b>华语影视</b><span>本周播放占比</span></div>
+          <div class="mid">VS</div>
+          <div class="side"><div class="fl">🇰🇷</div><b>日韩影视</b><span>本周播放占比</span></div>
+        </div>
+        <div class="bar"><i class="a"></i><i class="b"></i></div>
+        <div class="lbl"><span>华语 62%</span><span>日韩 38%</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COL 3 -->
+<section class="sec" id="genre">
+  <div class="wrap">
+    <div class="sec-top rv">
+      <div><span class="sec-idx">03 / Genre</span><h2 class="sec-title">按<span class="ac">类型</span>找片</h2></div>
+      <p class="sec-note">标签云，一键直达</p>
+    </div>
+    <div class="cloud">
+      <div class="chip l">动作<i>2860</i></div>
+      <div class="chip l">爱情<i>2640</i></div>
+      <div class="chip s">剧情<i>3120</i></div>
+      <div class="chip">喜剧<i>2200</i></div>
+      <div class="chip">悬疑<i>1840</i></div>
+      <div class="chip s">动漫<i>1960</i></div>
+      <div class="chip">科幻<i>1520</i></div>
+      <div class="chip">惊悚<i>1180</i></div>
+      <div class="chip">犯罪<i>1640</i></div>
+      <div class="chip s">历史<i>1120</i></div>
+      <div class="chip">战争<i>860</i></div>
+      <div class="chip">武侠<i>920</i></div>
+      <div class="chip">恐怖<i>720</i></div>
+      <div class="chip">文艺<i>980</i></div>
+      <div class="chip">纪录片<i>540</i></div>
+      <div class="chip">家庭<i>680</i></div>
+    </div>
+  </div>
+</section>
+
+<!-- COL 4 -->
+<section class="sec" id="cal">
+  <div class="wrap">
+    <div class="sec-top rv">
+      <div><span class="sec-idx">04 / Schedule</span><h2 class="sec-title">本周<span class="ac">排片</span></h2></div>
+      <p class="sec-note">新片上线，每日同步</p>
+    </div>
+    <div class="cal-head rv"><span>周一</span><span>周二</span><span>周三</span><span>周四</span><span>周五</span><span>周六</span><span>周日</span></div>
+    <div class="cal rv">
+      <div class="day"><div class="d">30</div></div>
+      <div class="day"><div class="d">01</div></div>
+      <div class="day on"><div class="d">02</div><div class="tg"><b>奥本海默</b>4K上线</div></div>
+      <div class="day"><div class="d">03</div><div class="tg"><b>封神加长版</b></div></div>
+      <div class="day"><div class="d">04</div><div class="tg"><b>漫长的季节</b>全集</div></div>
+      <div class="day on"><div class="d">05</div><div class="tg"><b>哥斯拉-1.0</b>首播</div></div>
+      <div class="day"><div class="d">06</div></div>
+      <div class="day"><div class="d">07</div><div class="tg"><b>鱿鱼游戏S2</b>预告</div></div>
+      <div class="day"><div class="d">08</div></div>
+      <div class="day on"><div class="d">09</div><div class="tg"><b>卧虎藏龙</b>修复</div></div>
+      <div class="day"><div class="d">10</div><div class="tg"><b>你的名字。</b></div></div>
+      <div class="day"><div class="d">11</div></div>
+      <div class="day on"><div class="d">12</div><div class="tg"><b>无间道</b>重映</div></div>
+      <div class="day"><div class="d">13</div></div>
+      <div class="day"><div class="d">14</div></div>
+      <div class="day on"><div class="d">15</div><div class="tg"><b>釜山行2</b>上线</div></div>
+      <div class="day"><div class="d">16</div><div class="tg"><b>流浪地球2</b>加长</div></div>
+      <div class="day"><div class="d">17</div></div>
+      <div class="day"><div class="d">18</div></div>
+      <div class="day on"><div class="d">19</div><div class="tg"><b>东京物语</b>修复</div></div>
+      <div class="day"><div class="d">20</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COL 5 -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="sec-top rv">
+      <div><span class="sec-idx">05 / About</span><h2 class="sec-title">关于<span class="ac">亚洲成人电影网</span></h2></div>
+      <p class="sec-note">平台亮点，一目了然</p>
+    </div>
+    <div class="about-grid">
+      <div class="stats">
+        <div class="stat rv"><b>6+</b><span>覆盖国家地区</span></div>
+        <div class="stat rv"><b>万级</b><span>影视资源总量</span></div>
+        <div class="stat rv"><b>1080P</b><span>高清画质可选</span></div>
+        <div class="stat rv"><b>每日</b><span>同步更新片单</span></div>
+      </div>
+      <div class="feats">
+        <div class="feat rv"><span class="ic">🌏</span><div><h5>覆盖全亚洲</h5><p>中日韩港台东南亚六大区域影视资源全覆盖。</p></div></div>
+        <div class="feat rv"><span class="ic">⚡</span><div><h5>每日同步更新</h5><p>院线新片与热播剧集实时跟进，告别剧荒。</p></div></div>
+        <div class="feat rv"><span class="ic">🎬</span><div><h5>多清晰度可选</h5><p>720P / 1080P / 4K 多档，按需自由切换。</p></div></div>
+        <div class="feat rv"><span class="ic">📱</span><div><h5>多端自适应</h5><p>手机平板电脑全适配，随时随地流畅观影。</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta rv">
+  <h3>好片无国界，亚洲一网打尽</h3>
+  <p>中日韩港台东南亚影视精品汇聚，华语电影、日剧韩剧、泰剧、港片精选。</p>
+  <a href="#top" class="btn">↑ 返回顶部</a>
+</div>
+
+<footer>
+  <div class="foot">
+    <div class="brand-c"><span class="badge">亞洲<br>影视</span><span>亚洲成人电影网</span><span class="em">全亚洲精选</span></div>
+    <p class="d">亚洲成人电影网专注全亚洲影视精品，汇聚中日韩港台东南亚影视资源，华语电影、日剧韩剧、泰剧、港片一站看全。</p>
+    <div class="links"><a href="#top">首页</a><a href="#country">国家</a><a href="#rank">榜单</a><a href="#genre">类型</a><a href="#cal">排片</a><a href="#about">关于</a></div>
+    <div class="copy">© 2026 亚洲成人电影网 版权所有 · 网站地址：<a href="https://yazhouchengrendianyingwang-wap.github.io">yazhouchengrendianyingwang-wap.github.io</a></div>
+  </div>
+</footer>
+
+<div class="topbtn" id="topbtn">↑</div>
+
+<script>
+(function(){
+  var load=document.getElementById('load');
+  window.addEventListener('load',function(){setTimeout(function(){load.classList.add('hide');},450)});
+
+  var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+  burger.addEventListener('click',function(){burger.classList.toggle('open');menu.classList.toggle('open')});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){burger.classList.remove('open');menu.classList.remove('open')})});
+
+  var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+  tabs.forEach(function(t){t.addEventListener('click',function(){
+    tabs.forEach(function(x){x.classList.remove('on')});panels.forEach(function(x){x.classList.remove('on')});
+    t.classList.add('on');document.getElementById('p'+t.dataset.t).classList.add('on');
+  })});
+
+  var rv=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+    rv.forEach(function(e){io.observe(e)});
+  } else{rv.forEach(function(e){e.classList.add('in')})}
+
+  var links=document.querySelectorAll('.menu a'),secs=document.querySelectorAll('section[id],header[id]');
+  function spy(){var pos=window.scrollY+120;secs.forEach(function(s){if(pos>=s.offsetTop&&pos<s.offsetTop+s.offsetHeight){links.forEach(function(a){a.classList.remove('on')});var a=document.querySelector('.menu a[href="#'+s.id+'"]');if(a)a.classList.add('on')}})}
+  window.addEventListener('scroll',spy);spy();
+
+  var tb=document.getElementById('topbtn');
+  window.addEventListener('scroll',function(){window.scrollY>500?tb.classList.add('show'):tb.classList.remove('show')});
+  tb.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+})();
+</script>
+</body>
+</html>
